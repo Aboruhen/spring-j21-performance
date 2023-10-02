@@ -16,3 +16,23 @@
   vus............................: 69    min=2       max=300
   vus_max........................: 300   min=300     max=300
 
+|===== Virtual threads Sum 10_000_000 int's
+ http_req_tls_handshaking.......: avg=0s       min=0s       med=0s    max=0s      p(90)=0s      p(95)=0s
+ http_req_waiting...............: avg=10.13s   min=416.18ms med=8.31s max=36.46s  p(90)=29.56s  p(95)=31.72s
+ http_reqs......................: 683   14.55665/s
+ iteration_duration.............: avg=10.14s   min=417.62ms med=8.31s max=36.46s  p(90)=29.56s  p(95)=31.72s
+ iterations.....................: 683   14.55665/s
+ vus............................: 19    min=2      max=300
+ vus_max........................: 300   min=300    max=300
+
+|===== Virtual threads Sum 10_000_000 int's; 2_000 users
+ http_req_failed................: 6.91%  ✓ 95        ✗ 1279
+ http_req_receiving.............: avg=164.01µs min=0s       med=85µs   max=6.97ms  p(90)=263µs   p(95)=487.35µs
+ http_req_sending...............: avg=73.22µs  min=2µs      med=43µs   max=3.74ms  p(90)=111.4µs p(95)=136.34µs
+ http_req_tls_handshaking.......: avg=0s       min=0s       med=0s     max=0s      p(90)=0s      p(95)=0s
+ http_req_waiting...............: avg=22.08s   min=386.35ms med=19.27s max=1m0s    p(90)=45.95s  p(95)=59.99s
+ http_reqs......................: 1374   17.172937/s
+ iteration_duration.............: avg=22.08s   min=386.48ms med=19.27s max=1m0s    p(90)=45.96s  p(95)=1m0s
+ iterations.....................: 1374   17.172937/s
+ vus............................: 38     min=2       max=2000
+ vus_max........................: 2000   min=2000    max=2000
