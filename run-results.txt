@@ -1,0 +1,18 @@
+ |===== Super simple
+ http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s     p(90)=0s       p(95)=0s
+ http_req_waiting...............: avg=89.68µs  min=53µs    med=81µs    max=5.77ms p(90)=104µs    p(95)=126µs
+ http_reqs......................: 17359  14715.99295/s
+ iteration_duration.............: avg=110.55µs min=66.16µs med=98.75µs max=7.76ms p(90)=125.54µs p(95)=160.37µs
+ iterations.....................: 17359  14715.99295/s
+ vus............................: 2      min=2         max=2
+ vus_max........................: 300    min=300       max=300
+
+ |===== Sum 10_000_000 int's
+  http_req_tls_handshaking.......: avg=0s       min=0s       med=0s    max=0s      p(90)=0s     p(95)=0s
+  http_req_waiting...............: avg=8.39s    min=393.71ms med=9.72s max=15.6s   p(90)=14.15s p(95)=14.64s
+  http_reqs......................: 701   18.575044/s
+  iteration_duration.............: avg=8.39s    min=393.82ms med=9.72s max=15.6s   p(90)=14.15s p(95)=14.65s
+  iterations.....................: 701   18.575044/s
+  vus............................: 69    min=2       max=300
+  vus_max........................: 300   min=300     max=300
+
