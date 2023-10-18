@@ -25,6 +25,18 @@
  vus............................: 19    min=2      max=300
  vus_max........................: 300   min=300    max=300
 
+|===== Sum 10_000_000 int's; 2_000 users
+  http_req_failed................: 0.00%  ✓ 0         ✗ 1355
+  http_req_receiving.............: avg=147.94µs min=8µs      med=64µs   max=10.93ms p(90)=170.6µs p(95)=329.19µs
+  http_req_sending...............: avg=55.47µs  min=2µs      med=33µs   max=3.41ms  p(90)=87.6µs  p(95)=107.29µs
+  http_req_tls_handshaking.......: avg=0s       min=0s       med=0s     max=0s      p(90)=0s      p(95)=0s
+  http_req_waiting...............: avg=21.51s   min=391.76ms med=20.17s max=50.12s  p(90)=42.04s  p(95)=45.65s
+  http_reqs......................: 1355   16.934479/s
+  iteration_duration.............: avg=21.52s   min=391.88ms med=20.17s max=50.12s  p(90)=42.06s  p(95)=45.66s
+  iterations.....................: 1355   16.934479/s
+  vus............................: 80     min=2       max=1999
+  vus_max........................: 2000   min=2000    max=2000
+
 |===== Virtual threads Sum 10_000_000 int's; 2_000 users
  http_req_failed................: 6.91%  ✓ 95        ✗ 1279
  http_req_receiving.............: avg=164.01µs min=0s       med=85µs   max=6.97ms  p(90)=263µs   p(95)=487.35µs
@@ -36,3 +48,13 @@
  iterations.....................: 1374   17.172937/s
  vus............................: 38     min=2       max=2000
  vus_max........................: 2000   min=2000    max=2000
+
+ |======
+ http_req_tls_handshaking.......: avg=0s       min=0s       med=0s     max=0s      p(90)=0s      p(95)=0s
+ http_req_waiting...............: avg=19.15s   min=400.21ms med=18.55s max=46.95s  p(90)=39.48s  p(95)=42.28s
+ http_reqs......................: 1048   17.465139/s
+ iteration_duration.............: avg=19.15s   min=400.97ms med=18.55s max=46.95s  p(90)=39.49s  p(95)=42.28s
+ iterations.....................: 1048   17.465139/s
+ vus............................: 140    min=2       max=3000
+ vus_max........................: 3000   min=3000    max=3000
+
