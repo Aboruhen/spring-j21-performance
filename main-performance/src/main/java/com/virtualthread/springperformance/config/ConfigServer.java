@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @Configuration
 public class ConfigServer {
 
-    /*@Bean(TaskExecutionAutoConfiguration.APPLICATION_TASK_EXECUTOR_BEAN_NAME)
+    @Bean(TaskExecutionAutoConfiguration.APPLICATION_TASK_EXECUTOR_BEAN_NAME)
     public AsyncTaskExecutor applicationTaskExecutor() {
         System.out.println("applicationTaskExecutor");
         return new TaskExecutorAdapter(Executors.newVirtualThreadPerTaskExecutor());
@@ -26,6 +26,6 @@ public class ConfigServer {
             System.out.println("newVirtualThreadPerTaskExecutor");
             protocolHandler.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         };
-    }*/
+    }
 
 }
