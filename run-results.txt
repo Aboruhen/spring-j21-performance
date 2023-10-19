@@ -1,18 +1,88 @@
- |===== Super simple
- http_req_tls_handshaking.......: avg=0s       min=0s      med=0s      max=0s     p(90)=0s       p(95)=0s
- http_req_waiting...............: avg=89.68µs  min=53µs    med=81µs    max=5.77ms p(90)=104µs    p(95)=126µs
- http_reqs......................: 17359  14715.99295/s
- iteration_duration.............: avg=110.55µs min=66.16µs med=98.75µs max=7.76ms p(90)=125.54µs p(95)=160.37µs
- iterations.....................: 17359  14715.99295/s
- vus............................: 2      min=2         max=2
- vus_max........................: 300    min=300       max=300
+### Performance + sleep + stream map reduce
+ iteration_duration.............: avg=3.01s   min=304.22ms med=1.96s max=7.66s   p(90)=7.35s p(95)=7.64s
+     iterations.....................: 27246  541.587827/s
+     vus............................: 146    min=7        max=5000
+     vus_max........................: 5000   min=5000     max=5000
 
- |===== Sum 10_000_000 int's
-  http_req_tls_handshaking.......: avg=0s       min=0s       med=0s    max=0s      p(90)=0s     p(95)=0s
-  http_req_waiting...............: avg=8.39s    min=393.71ms med=9.72s max=15.6s   p(90)=14.15s p(95)=14.64s
-  http_reqs......................: 701   18.575044/s
-  iteration_duration.............: avg=8.39s    min=393.82ms med=9.72s max=15.6s   p(90)=14.15s p(95)=14.65s
-  iterations.....................: 701   18.575044/s
-  vus............................: 69    min=2       max=300
-  vus_max........................: 300   min=300     max=300
+running (0m50.3s), 0000/5000 VUs, 27246 complete and 0 interrupted iterations
+
+### Performance + sleep
+    http_reqs......................: 27199  540.68427/s
+     iteration_duration.............: avg=3.01s   min=305.06ms med=1.92s max=7.72s   p(90)=7.39s p(95)=7.68s
+     iterations.....................: 27199  540.68427/s
+     vus............................: 147    min=7       max=5000
+     vus_max........................: 5000   min=5000    max=5000
+
+
+running (0m50.3s), 0000/5000 VUs, 27199 complete and 0 interrupted iterations
+
+### Virtual threads Performance + sleep + stream map reduce
+ http_reqs......................: 17192  339.938176/s
+     iteration_duration.............: avg=5.74s    min=304.32ms med=4.78s max=13.86s  p(90)=13.15s p(95)=13.33s
+     iterations.....................: 17192  339.938176/s
+     vus............................: 13     min=6        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+
+running (0m50.6s), 0000/5000 VUs, 17192 complete and 0 interrupted iterations
+
+### Virtual threads Performance + sleep + sum
+     http_reqs......................: 15442  293.591486/s
+     iteration_duration.............: avg=6.67s    min=305.4ms  med=6.01s max=15.43s  p(90)=14.71s p(95)=14.98s
+     iterations.....................: 15442  293.591486/s
+     vus............................: 365    min=6        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+
+running (0m52.6s), 0000/5000 VUs, 15442 complete and 0 interrupted iterations
+default ✓ [======================================] 0000/5000 VUs  50s
+
+=--------------------- + tomcat virtual threads
+
+### Performance + sleep + stream map reduce
+ iteration_duration.............: avg=3.01s   min=304.22ms med=1.96s max=7.66s   p(90)=7.35s p(95)=7.64s
+     iterations.....................: 27246  541.587827/s
+     vus............................: 146    min=7        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+running (0m50.3s), 0000/5000 VUs, 27246 complete and 0 interrupted iterations
+
+
+     http_reqs......................: 41678  830.021684/s
+     iteration_duration.............: avg=1.76s    min=305.2ms  med=1.37s max=4.11s   p(90)=3.84s p(95)=4.01s
+     iterations.....................: 41678  830.021684/s
+     vus............................: 148    min=7        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+
+running (0m50.2s), 0000/5000 VUs, 41678 complete and 0 interrupted iterations
+
+
+
+=== file read
+iteration_duration.............: avg=1.01s   min=1.53ms med=474.02ms max=4.65s   p(90)=2.89s p(95)=3.09s
+     iterations.....................: 70181  1397.770387/s
+     vus............................: 138    min=7         max=5000
+     vus_max........................: 5000   min=5000      max=5000
+running (0m50.2s), 0000/5000 VUs, 70181 complete and 0 interrupted iterations
+
+==== tomcat virtual threads
+     iteration_duration.............: avg=1.72s   min=2.5ms  med=506.94ms max=22.03s  p(90)=3.32s p(95)=6.55s
+     iterations.....................: 48090  959.237455/s
+     vus............................: 154    min=8        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+running (0m50.1s), 0000/5000 VUs, 48090 complete and 0 interrupted iterations
+
+
+
+=== virtual thread file read
+     iteration_duration.............: avg=2.11s   min=2.65ms med=893.71ms max=10.7s  p(90)=6.02s p(95)=6.34s
+     iterations.....................: 37081  739.724855/s
+     vus............................: 171    min=7        max=5000
+     vus_max........................: 5000   min=5000     max=5000
+
+
+running (0m50.1s), 0000/5000 VUs, 37081 complete and 0 interrupted iterations
+
 
